@@ -37,7 +37,7 @@ class easyextlist():
                         f.write(exception)
                         f.write('\n')
                 break
-            
+
     def makeitunique(self):
 
         unique_extension = []
@@ -56,8 +56,8 @@ class easyextlist():
                 else:
                     file_without_extension.append(fileline)
                     noextensioncounter+=1
-        unique_extension = set(unique_extension)
-        file_without_extension = set(file_without_extension)
+        unique_extension = sorted(set(unique_extension))
+        file_without_extension = sorted(set(file_without_extension))
 
         with open('uniquedot.txt','w') as f:
             for elem in unique_extension:
@@ -102,7 +102,7 @@ if __name__ == "__main__":
             f.write('platform architecture :'+str(platform.architecture())+'\n')
             f.write('sys version :'+sys.version+'\n')
             f.write('family :'+ my_system.SystemFamily+'\n')
-            f.write('time : '+(str(now[2])+'/'+str((now[1]))+'/'+str(now[0])+'|'+str(now[3])+':'+str(now[4])+':'+str(now[5])+"| ( UTC)"))
+            f.write('time : '+(str(now[2])+'/'+str((now[1]))+'/'+str(now[0])+'|'+str(now[3])+':'+str(now[4])+':'+str(now[5])+"| ( UTC 24HR format)"))
         except Exception as exception:
             print(exception)
 
@@ -155,6 +155,9 @@ if __name__ == "__main__":
 ▓▓▓▓▓▓█░░░░░░░░░░░░░░█░
 ▓▓▓▓▓▓█████░░░░░░░░░█░░
 ██████▀░░░░▀▀██████▀░░░░
+Please press anykey to delete unnecessary files
+if u close the terminal. it won't delete those files its a feature, not a bug 
+HAHAHAHAHHAAHAHAHHAHAHAHAHAHHAHAHAHAh
 
 """)
     cont = input()
