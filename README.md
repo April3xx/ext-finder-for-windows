@@ -11,10 +11,10 @@
 3. and information of your system like this
 
 ```
-username : xxxx
-platform : Windows-10-10.0.19041-SP0
-platform architecture :('64bit', 'WindowsPE')
-sys version :3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 23:03:10) [MSC v.1916 64 bit (AMD64)]
-family :103C_5335KV HP Omen
-time : 27/10/2020|12:32:11| ( UTC)
+    username : xxxx
+    platform : Windows-10-10.0.19041-SP0
+    platform architecture :('64bit', 'WindowsPE')
+    sys version :3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 23:03:10) [MSC v.1916 64 bit (AMD64)]
+    family :103C_5335KV HP Omen
+    time : 27/10/2020|12:32:11| ( UTC)
 ```
