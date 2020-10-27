@@ -37,13 +37,9 @@ class easyextlist():
                         f.write(exception)
                         f.write('\n')
                 break
+            
     def makeitunique(self):
-        """
-        สร้าง uniquedot.txt(เเค่ที่มีนามสกุล)
-        สร้าง unique_without_extension.txt(ไม่มีนามสกุล)
-        สร้าง unique_extension.txt ---> unique file ทั้งหมด (นามสกุล + ไม่มีนามสกุล)
 
-        """
         unique_extension = []
         file_without_extension=[]
         dotcounter = 0
