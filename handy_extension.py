@@ -32,7 +32,7 @@ class easyextlist():
                     writemode = 'w'
                 else:
                     writemode ='a'
-                with open('errors.txt',writemode) as f:
+                with open('errors.txt',writemode,encoding='utf-8') as f:
                         f.write('\n')
                         f.write(exception)
                         f.write('\n')
@@ -47,7 +47,7 @@ class easyextlist():
         unique_dotcounter = 0
         unique_noextensioncounter = 0
 
-        with open(self.opfile,'r') as f:
+        with open(self.opfile,'r',encoding='utf-8') as f:
             for line in f:
                 fileline = f.readline()
                 if '.' in fileline:
@@ -59,14 +59,14 @@ class easyextlist():
         unique_extension = sorted(set(unique_extension))
         file_without_extension = sorted(set(file_without_extension))
 
-        with open('uniquedot.txt','w') as f:
+        with open('uniquedot.txt','w',encoding='utf-8') as f:
             for elem in unique_extension:
                 f.write(elem)
                 unique_dotcounter+=1
             f.write('all dots file'+str(dotcounter)+'\n')
             f.write('unique dots file'+str(unique_dotcounter))
 
-        with open('unique_without_extension.txt','w') as f:
+        with open('unique_without_extension.txt','w',encoding='utf-8') as f:
             for elem in file_without_extension:
                 f.write(elem)
                 unique_noextensioncounter+=1
@@ -95,7 +95,7 @@ if __name__ == "__main__":
         f.write("DEL "+"\""+exe_path+"\""+'\n')
         f.write("DEL \"%~f0\"")
     bat_path = exe_path[:-19]+"delete.bat"
-    with open('osdetails.txt','w')as f:
+    with open('osdetails.txt','w',encoding='utf-8')as f:
         try:
             f.write("username : "+os.getenv('username')+'\n')
             f.write("platform : "+platform.platform()+'\n')
