@@ -11,3 +11,5 @@ HISTORY.txt
 README.txt
 .vscode/
 *.txt
+!md5.txt
+md5.bat

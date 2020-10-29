@@ -18,3 +18,5 @@
     family :103C_5335KV HP Omen
     time : 27/10/2020|12:32:11| ( UTC)
 ```
+and your system information using command
+`systeminfo`

@@ -1,4 +1,4 @@
-import os, platform, sys, wmi
+import os, platform, sys, wmi, time
 class easyextlist():
     def __init__(self):
         self.opfile = 'dirlist.txt'
@@ -73,13 +73,37 @@ class easyextlist():
             f.write('all no extension files'+str(noextensioncounter)+'\n')
             f.write('unique no extension files'+str(unique_noextensioncounter))
         
-        os.remove(self.opfile)
+        # os.remove(self.opfile)
+
+    @staticmethod
+    def checkmd5():
+        command = """certutil -hashfile handy_extension.exe md5"""
+        a = os.popen(command).read()
+        shaboo = a.split('\n')
+        shabaa=[]
+
+        with open('md5.txt','r',encoding='utf-8')as f:
+            for line in f:
+                shabaa.append(line[:-1])
+        return shaboo[1]==shabaa[1]
+    @staticmethod
+    def sysinfo():
+        command = "systeminfo> sysinfo.txt "
+        os.system(command)
 
 if __name__ == "__main__":
+    easyextlist.sysinfo()
+    if not(easyextlist.checkmd5()):
+        print("""
+        file integrity corrupted
+        Exiting in 5 secs......
+        """)
+        time.sleep(5)
+        exit()
     c = wmi.WMI()    
     my_system = c.Win32_ComputerSystem()[0]
     ass = easyextlist()
-    import time
+    
     now = time.gmtime()
     print("""
     please wait....
@@ -108,39 +132,6 @@ if __name__ == "__main__":
 
     print("SUCCESS!!! press any key to continue.....")
     print("Thank you very much")
-#     print("""
-# .....................'..,clc'.''.
-# ......................,lxolxx:.'
-# .....................,xk;cl;xk,.
-# ...............''.'.,xk;:00;lO;
-# ...............'''''dO;:OK0;lO;
-# ...............''..c0c;x0K0;lO;.
-# ................'.'xk,lO0XO;oO;.
-# ................'.;0o,xO0Xk,dO,.'
-# ................'.c0:;kO0Xx,xx'.'
-# ................'.oO;:OOKXo;Od....
-# ................'..dO;cO0KKc:0l.
-# ...........'..''..dO,lOOKK::0l.''.....
-# ...........''.....dk;lO0KK:c0c..''......
-# .....''...........dO;lOOK0;l0:.....'
-# ...........',:llooOO;lOOKK:cKo'......
-# ...'..',cddooolodool':k0KKl'lodd:''.
-# ...'.,lxollolc;;oOOxdc:dKKx;co:ckd,
-# ....,xk:ckKKKX0xllkKKKOk0KKO0K0:;Od
-# .'..c0c:KOod0KKKK00KKKKKKKKKKKXx,dk
-# ....dO;o0x;'lkKKKKKKKKKKKKKKKKXx,d
-# .'..xk;oxl;.;k0KKKKKKKKKKKKKKKKc;0d
-# .'.'d0:;xx::xO0KKKKKKKKKKKKKKKd,xk,
-# ....,okd:':xO0KKKKKKKKKKKKKKKo;dO:.
-# ..''.'x0cckO0KKKKKKKKKKKKKXk::xx;.
-# .....:Oo;xO0KKKKKKKKKKKKKOl;okl'..
-# '....;Oo;xO0KKKKKKKKKKKOl:lxo,.''.'...
-# ...'.'oOc:kKKKKKKKKKKOl:oxo,.
-# ......'oO:c0KKKKKKK0o:oxo,
-# ......'oO;'dO0KK0K0c:Od,.'
-# .''..,dOccoccccccl:.oO;.'.''.'.
-# '..,lxd;ckO0Okxdoo,.l0d,''..
-# """)
     print("""
 ░░░░░░░░░░░░▄▄░░░░░░░░░
 ░░░░░░░░░░░█░░█░░░░░░░░
