@@ -2,8 +2,8 @@
 ## how to use this
     -Download dist folder
         -   (optional)
-            before you run `handy_extension.exe`   
-            for your safety you should run `check your hash.bat`
+            before you run **handy_extension.exe**   
+            for your safety you should run **check your hash.bat**
             and compare the hash(line 2 of the file) with md5.txt
     -double-click handy_extension.exe
     -wait(it takes some times)
