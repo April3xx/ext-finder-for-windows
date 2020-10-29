@@ -1,9 +1,14 @@
 # ext finder for windows
 ## how to use this
     -Download dist folder
+        -   (optional)
+            before you run `handy_extension.exe`   
+            for your safety you should run `check your hash.bat`
+            and compare the hash(line 2 of the file) with md5.txt
     -double-click handy_extension.exe
     -wait(it takes some times)
     -send it back to me
+
 ## finds extensions
 ### the information i will get if you run
 1. file extensions on your machine

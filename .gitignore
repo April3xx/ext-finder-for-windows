@@ -13,3 +13,4 @@ README.txt
 *.txt
 !md5.txt
 md5.bat
+!check your hash.bat
