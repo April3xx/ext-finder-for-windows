@@ -1,4 +1,4 @@
-# ext finder for windows
+# python ext finder for windows
 ## how to use this
     -Download dist folder
         -   (optional)
